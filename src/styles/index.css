@@ -1,0 +1,480 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.main-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.welcome-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.welcome-section p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Client Form */
+.client-form {
+  max-width: 800px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: #667eea;
+}
+
+.form-header h2 {
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.form-section h3 {
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.allocation-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.total-allocation {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #10b981;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.total-allocation.invalid {
+  background: #ef4444;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 1.5rem;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Portfolio View */
+.portfolio {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.portfolio-header {
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.client-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.client-meta {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  color: white;
+}
+
+.metric-content {
+  flex: 1;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.chart-wrapper {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+/* Recommendations */
+.recommendations {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.recommendations h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.recommendations-intro {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #d1fae5;
+  border-radius: 8px;
+  color: #065f46;
+}
+
+.actions-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.action-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid;
+}
+
+.action-item.buy {
+  border-left-color: #10b981;
+}
+
+.action-item.sell {
+  border-left-color: #ef4444;
+}
+
+.action-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.action-header h4 {
+  font-size: 1.125rem;
+  color: #1f2937;
+}
+
+.icon-buy {
+  color: #10b981;
+}
+
+.icon-sell {
+  color: #ef4444;
+}
+
+.action-details {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.detail-row.action-row {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.value.buy {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.value.sell {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.amount {
+  font-size: 1.125rem;
+}
+
+/* Risk Profile Info */
+.risk-profile-info {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.risk-profile-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.risk-profile-info > p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.detail-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.detail-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+
+  .allocation-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .client-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .client-info h1 {
+    font-size: 1.5rem;
+  }
+}
